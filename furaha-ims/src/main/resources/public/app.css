@@ -1,0 +1,985 @@
+/* ==========================================================================
+   FURAHA INVENTORY & SALES MANAGEMENT SYSTEM (ISMS)
+   Furaha Mini Mart · Design Specification UI Styling
+   ========================================================================== */
+
+:root {
+  --primary: #1e3a8a;       /* Deep Navy */
+  --primary-light: #2563eb; /* Vibrant Blue */
+  --primary-dark: #172554;
+  --secondary: #0d9488;     /* Teal */
+  --accent: #f59e0b;        /* Amber */
+  --danger: #dc2626;        /* Crimson Red */
+  --success: #16a34a;       /* Forest Green */
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   1. LOGIN SCREEN STYLES (SDS §4.3.1 Figure 8)
+   ========================================================================== */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 16px;
+}
+
+.login-card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 440px;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.login-brand h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: 0.5px;
+}
+
+.brand-sub {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.project-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label, .form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-control, input[type="text"], input[type="password"], input[type="number"], input[type="email"], select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  background-color: #fff;
+  color: var(--text-main);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-control:focus, input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.password-wrapper input {
+  padding-right: 40px;
+}
+
+.btn-toggle-pass {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.quick-logins {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  text-align: center;
+}
+
+.quick-title {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.quick-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.login-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   2. APP HEADER & NAVIGATION (SDS §4.3.2)
+   ========================================================================== */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: var(--primary-dark);
+  color: #ffffff;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-brand-badge {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+.header-shop-name {
+  font-size: 16px;
+  font-weight: 800;
+  display: block;
+}
+
+.header-app-name {
+  font-size: 11px;
+  color: #93c5fd;
+  display: block;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.app-nav {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.nav-container {
+  display: flex;
+  gap: 4px;
+  padding: 0 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.nav-tab {
+  background: none;
+  border: none;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-tab:hover {
+  color: var(--primary-light);
+  background-color: #f8fafc;
+}
+
+.nav-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background-color: #eff6ff;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+  align-self: center;
+  margin: 0 4px;
+}
+
+.badge-pill {
+  background: var(--danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   3. MAIN WORKSPACE CONTENT
+   ========================================================================== */
+.app-main {
+  flex: 1;
+  padding: 20px 24px 40px 24px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-header {
+  margin-bottom: 20px;
+}
+
+.tab-header h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.tab-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.panel-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   4. KPI CARDS (SDS Figure 9)
+   ========================================================================== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.kpi-icon {
+  font-size: 28px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.kpi-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.kpi-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 2px 0;
+}
+
+.kpi-sub {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.card-sales { border-left: 4px solid var(--success); }
+.card-alert { border-left: 4px solid var(--danger); }
+.card-pending { border-left: 4px solid var(--accent); }
+.card-credit { border-left: 4px solid #8b5cf6; }
+.card-val { border-left: 4px solid var(--primary); }
+
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .grid-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   5. POINT OF SALE (POS) SCREEN (SDS Figure 10 & 11)
+   ========================================================================== */
+.pos-container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .pos-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pos-cart-panel {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+}
+
+.pos-search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.input-with-icon {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.input-with-icon input {
+  padding-left: 36px;
+}
+
+.pos-qty-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pos-qty-input-group input {
+  width: 70px;
+  text-align: center;
+}
+
+.quick-select-row {
+  margin-bottom: 16px;
+}
+
+.pos-table-wrapper {
+  flex: 1;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.empty-cart-msg {
+  padding: 60px 20px !important;
+}
+
+.cart-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.payment-card {
+  position: sticky;
+  top: 70px;
+}
+
+.pos-total-display {
+  background: #0f172a;
+  color: #22c55e;
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.total-label {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.total-amount {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.payment-method-radios {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.radio-label:hover {
+  background-color: #f1f5f9;
+}
+
+.radio-label:has(input:checked) {
+  border-color: var(--primary);
+  background-color: #eff6ff;
+  color: var(--primary);
+}
+
+.change-display {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  background: #f8fafc;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+}
+
+.change-display strong {
+  color: var(--success);
+  font-size: 16px;
+}
+
+.credit-notice {
+  font-size: 12px;
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #eff6ff;
+  color: #1e40af;
+}
+
+/* ==========================================================================
+   6. TABLES & BUTTONS
+   ========================================================================== */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: #f1f5f9;
+}
+
+.btn-danger-outline {
+  background: transparent;
+  border-color: #fecaca;
+  color: var(--danger);
+}
+
+.btn-danger-outline:hover {
+  background-color: #fee2e2;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.btn-lg {
+  padding: 14px 20px;
+  font-size: 16px;
+}
+
+.badge-tag {
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.badge-success { background: #dcfce7; color: #166534; }
+.badge-warning { background: #fef3c7; color: #92400e; }
+.badge-danger { background: #fee2e2; color: #991b1b; }
+
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.alert-danger {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.alert-success {
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* Helpers */
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-end { display: flex; justify-content: flex-end; gap: 8px; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--text-muted); }
+
+/* ==========================================================================
+   7. MODAL DIALOGS
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.modal-footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* Sub-tabs for Reports */
+.sub-nav-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.sub-tab {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.sub-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.formula-banner {
+  background: #f1f5f9;
+  border-left: 4px solid var(--primary);
+  padding: 10px 14px;
+  font-size: 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   8. THERMAL RECEIPT SLIP STYLING (58mm / 80mm Print Mode)
+   ========================================================================== */
+.receipt-card {
+  max-width: 360px;
+}
+
+.thermal-receipt {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+  padding: 12px;
+}
+
+.receipt-shop-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.receipt-shop-sub, .receipt-shop-contact {
+  text-align: center;
+  font-size: 10px;
+}
+
+.receipt-divider {
+  text-align: center;
+  overflow: hidden;
+  margin: 6px 0;
+  letter-spacing: -1px;
+}
+
+.receipt-meta {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.receipt-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.receipt-items-table th {
+  border-bottom: 1px dashed #000;
+  padding: 4px 0;
+  background: none;
+  color: #000;
+}
+
+.receipt-items-table td {
+  padding: 4px 0;
+  border: none;
+}
+
+.receipt-totals {
+  font-size: 11px;
+}
+
+.receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+.receipt-total-row.grand-total {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.receipt-pay-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+.receipt-footer {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.pos-autoprint-bar {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pos-autoprint-bar .checkbox-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.pos-autoprint-bar .badge-tag {
+  font-size: 10px;
+}
+
+/* ==========================================================================
+   9. PRINT STYLES (@media print)
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 0;
+    size: 80mm auto;
+  }
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #receiptModal, #receiptPrintArea, #receiptPrintArea * {
+    visibility: visible;
+  }
+  #receiptModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none !important;
+    display: block !important;
+  }
+  .modal-card {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 80mm !important;
+  }
+  .modal-footer, .modal-close {
+    display: none !important;
+  }
+  .thermal-receipt {
+    width: 100%;
+    padding: 2mm 4mm;
+  }
+}

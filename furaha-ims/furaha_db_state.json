@@ -1,0 +1,466 @@
+﻿{
+    "roles":  [
+                  {
+                      "role_id":  1,
+                      "role_name":  "ADMINISTRATOR",
+                      "description":  "System Administrator / Shop Owner"
+                  },
+                  {
+                      "role_id":  2,
+                      "role_name":  "ATTENDANT",
+                      "description":  "Cashier / Shop Attendant"
+                  }
+              ],
+    "users":  [
+                  {
+                      "user_id":  1,
+                      "role_id":  1,
+                      "role_name":  "ADMINISTRATOR",
+                      "username":  "admin",
+                      "password_hash":  "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+                      "display_name":  "Mitsanze Kazungu (Admin)",
+                      "is_active":  true,
+                      "created_at":  "2026-11-23 15:40:47",
+                      "last_login_at":  "2026-11-23 23:42:12"
+                  },
+                  {
+                      "user_id":  2,
+                      "role_id":  2,
+                      "role_name":  "ATTENDANT",
+                      "username":  "amina",
+                      "password_hash":  "9a7852c035c91b5c3e031e0303fe20f2db9d251d2fbe4f6050b11e2f790c6fa7",
+                      "display_name":  "Amina Mwangi (Attendant)",
+                      "is_active":  true,
+                      "created_at":  "2026-11-23 15:40:47",
+                      "last_login_at":  null
+                  },
+                  {
+                      "user_id":  3,
+                      "role_id":  2,
+                      "role_name":  "ATTENDANT",
+                      "username":  "john",
+                      "password_hash":  "129b09f448c5b0c4cf1b9cf3832ca87e3831ecad3474a2dfbfab043c85fdf294",
+                      "display_name":  "John Ochieng (Attendant)",
+                      "is_active":  true,
+                      "created_at":  "2026-11-23 15:40:47",
+                      "last_login_at":  null
+                  }
+              ],
+    "units":  [
+                  {
+                      "unit_id":  1,
+                      "unit_name":  "Piece / Unit",
+                      "abbreviation":  "pcs"
+                  },
+                  {
+                      "unit_id":  2,
+                      "unit_name":  "Kilogram",
+                      "abbreviation":  "kg"
+                  },
+                  {
+                      "unit_id":  3,
+                      "unit_name":  "Litre",
+                      "abbreviation":  "ltr"
+                  },
+                  {
+                      "unit_id":  4,
+                      "unit_name":  "Packet",
+                      "abbreviation":  "pkt"
+                  },
+                  {
+                      "unit_id":  5,
+                      "unit_name":  "Box",
+                      "abbreviation":  "box"
+                  }
+              ],
+    "suppliers":  [
+                      {
+                          "supplier_id":  1,
+                          "supplier_name":  "Highland Dairies Kenya",
+                          "phone":  "+254 712 000 001",
+                          "email":  "orders@highland.co.ke",
+                          "is_active":  true
+                      },
+                      {
+                          "supplier_id":  2,
+                          "supplier_name":  "Harvest Foods \u0026 Millers Ltd",
+                          "phone":  "+254 722 000 002",
+                          "email":  "sales@harvest.co.ke",
+                          "is_active":  true
+                      },
+                      {
+                          "supplier_id":  3,
+                          "supplier_name":  "Premier FMCG Distributors",
+                          "phone":  "+254 733 000 003",
+                          "email":  "supplies@premier.co.ke",
+                          "is_active":  true
+                      },
+                      {
+                          "supplier_id":  4,
+                          "supplier_name":  "Brookside Dairy Ltd",
+                          "phone":  "+254 700 000 004",
+                          "email":  "info@brookside.co.ke",
+                          "is_active":  true
+                      }
+                  ],
+    "products":  [
+                     {
+                         "product_id":  1,
+                         "sku":  "FMM-1001",
+                         "product_name":  "Brookside Fresh Milk 500ml",
+                         "category":  "Dairy \u0026 Eggs",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  4,
+                         "supplier_name":  "Brookside Dairy Ltd",
+                         "cost_price":  52,
+                         "selling_price":  65,
+                         "quantity_on_hand":  2,
+                         "reorder_level":  15,
+                         "lead_time_days":  2,
+                         "safety_stock":  5,
+                         "is_active":  true,
+                         "is_low_stock":  true
+                     },
+                     {
+                         "product_id":  2,
+                         "sku":  "FMM-1002",
+                         "product_name":  "Jogoo Maize Meal 2kg",
+                         "category":  "Grains \u0026 Flour",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  2,
+                         "supplier_name":  "Harvest Foods \u0026 Millers Ltd",
+                         "cost_price":  180,
+                         "selling_price":  210,
+                         "quantity_on_hand":  28,
+                         "reorder_level":  12,
+                         "lead_time_days":  4,
+                         "safety_stock":  6,
+                         "is_active":  true,
+                         "is_low_stock":  false
+                     },
+                     {
+                         "product_id":  3,
+                         "sku":  "FMM-1003",
+                         "product_name":  "Kabras Pure White Sugar 1kg",
+                         "category":  "Groceries",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  2,
+                         "supplier_name":  "Harvest Foods \u0026 Millers Ltd",
+                         "cost_price":  142,
+                         "selling_price":  165,
+                         "quantity_on_hand":  18,
+                         "reorder_level":  15,
+                         "lead_time_days":  3,
+                         "safety_stock":  5,
+                         "is_active":  true,
+                         "is_low_stock":  false
+                     },
+                     {
+                         "product_id":  4,
+                         "sku":  "FMM-1004",
+                         "product_name":  "Rina Vegetable Cooking Oil 1L",
+                         "category":  "Oils \u0026 Fats",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  3,
+                         "supplier_name":  "Premier FMCG Distributors",
+                         "cost_price":  260,
+                         "selling_price":  310,
+                         "quantity_on_hand":  9,
+                         "reorder_level":  10,
+                         "lead_time_days":  3,
+                         "safety_stock":  4,
+                         "is_active":  true,
+                         "is_low_stock":  true
+                     },
+                     {
+                         "product_id":  5,
+                         "sku":  "FMM-1005",
+                         "product_name":  "Broadways White Bread 400g",
+                         "category":  "Bakery",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  2,
+                         "supplier_name":  "Harvest Foods \u0026 Millers Ltd",
+                         "cost_price":  55,
+                         "selling_price":  65,
+                         "quantity_on_hand":  3,
+                         "reorder_level":  12,
+                         "lead_time_days":  1,
+                         "safety_stock":  4,
+                         "is_active":  true,
+                         "is_low_stock":  true
+                     },
+                     {
+                         "product_id":  6,
+                         "sku":  "FMM-1006",
+                         "product_name":  "Daawat Super Basmati Rice 2kg",
+                         "category":  "Grains \u0026 Flour",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  2,
+                         "supplier_name":  "Harvest Foods \u0026 Millers Ltd",
+                         "cost_price":  380,
+                         "selling_price":  450,
+                         "quantity_on_hand":  22,
+                         "reorder_level":  8,
+                         "lead_time_days":  5,
+                         "safety_stock":  3,
+                         "is_active":  true,
+                         "is_low_stock":  false
+                     },
+                     {
+                         "product_id":  7,
+                         "sku":  "FMM-1007",
+                         "product_name":  "Ketepa Pride Tea Bags 50s",
+                         "category":  "Beverages",
+                         "unit_id":  4,
+                         "unit_abbr":  "pkt",
+                         "preferred_supplier_id":  3,
+                         "supplier_name":  "Premier FMCG Distributors",
+                         "cost_price":  115,
+                         "selling_price":  140,
+                         "quantity_on_hand":  14,
+                         "reorder_level":  8,
+                         "lead_time_days":  4,
+                         "safety_stock":  2,
+                         "is_active":  true,
+                         "is_low_stock":  false
+                     },
+                     {
+                         "product_id":  8,
+                         "sku":  "FMM-1008",
+                         "product_name":  "Geisha Beauty Soap Aloe Vera 225g",
+                         "category":  "Toiletries",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  3,
+                         "supplier_name":  "Premier FMCG Distributors",
+                         "cost_price":  90,
+                         "selling_price":  115,
+                         "quantity_on_hand":  2,
+                         "reorder_level":  10,
+                         "lead_time_days":  4,
+                         "safety_stock":  3,
+                         "is_active":  true,
+                         "is_low_stock":  true
+                     },
+                     {
+                         "product_id":  9,
+                         "sku":  "FMM-1009",
+                         "product_name":  "Omo Hand Washing Powder 500g",
+                         "category":  "Household",
+                         "unit_id":  4,
+                         "unit_abbr":  "pkt",
+                         "preferred_supplier_id":  3,
+                         "supplier_name":  "Premier FMCG Distributors",
+                         "cost_price":  155,
+                         "selling_price":  185,
+                         "quantity_on_hand":  16,
+                         "reorder_level":  8,
+                         "lead_time_days":  4,
+                         "safety_stock":  3,
+                         "is_active":  true,
+                         "is_low_stock":  false
+                     },
+                     {
+                         "product_id":  10,
+                         "sku":  "FMM-1010",
+                         "product_name":  "Highland Natural Yoghurt 500ml",
+                         "category":  "Dairy \u0026 Eggs",
+                         "unit_id":  1,
+                         "unit_abbr":  "pcs",
+                         "preferred_supplier_id":  1,
+                         "supplier_name":  "Highland Dairies Kenya",
+                         "cost_price":  85,
+                         "selling_price":  110,
+                         "quantity_on_hand":  7,
+                         "reorder_level":  10,
+                         "lead_time_days":  2,
+                         "safety_stock":  4,
+                         "is_active":  true,
+                         "is_low_stock":  true
+                     }
+                 ],
+    "customers":  [
+                      {
+                          "customer_id":  1,
+                          "customer_name":  "Walk-in Customer (General)",
+                          "phone":  null,
+                          "credit_limit":  0,
+                          "balance":  0,
+                          "is_active":  true
+                      },
+                      {
+                          "customer_id":  2,
+                          "customer_name":  "Mama Wanjiru (Local Resident)",
+                          "phone":  "+254 722 123 456",
+                          "credit_limit":  5000,
+                          "balance":  1850,
+                          "is_active":  true
+                      },
+                      {
+                          "customer_id":  3,
+                          "customer_name":  "Bwana Suleiman Said",
+                          "phone":  "+254 733 654 321",
+                          "credit_limit":  10000,
+                          "balance":  3200,
+                          "is_active":  true
+                      },
+                      {
+                          "customer_id":  4,
+                          "customer_name":  "Celestine Achieng",
+                          "phone":  "+254 711 987 654",
+                          "credit_limit":  3000,
+                          "balance":  450,
+                          "is_active":  true
+                      }
+                  ],
+    "sales":  [
+                  {
+                      "sale_id":  1,
+                      "receipt_no":  "RCP-20261122-1042",
+                      "sold_at":  "2026-11-23 15:40:47",
+                      "status":  "COMPLETED",
+                      "subtotal":  420,
+                      "total":  420,
+                      "cashier_id":  2,
+                      "cashier_name":  "Amina Mwangi (Attendant)",
+                      "customer_id":  1,
+                      "customer_name":  "Walk-in Customer",
+                      "payment_method":  "CASH",
+                      "amount_tendered":  500,
+                      "change_due":  80,
+                      "reference":  null
+                  }
+              ],
+    "sale_items":  [
+                       {
+                           "sale_item_id":  1,
+                           "sale_id":  1,
+                           "product_id":  2,
+                           "product_name":  "Jogoo Maize Meal 2kg",
+                           "quantity":  2,
+                           "unit_selling_price":  210,
+                           "unit_cost_at_sale":  180,
+                           "line_total":  420
+                       }
+                   ],
+    "stock_counts":  [
+                         {
+                             "count_id":  1,
+                             "created_by":  2,
+                             "created_by_name":  "Amina Mwangi (Attendant)",
+                             "counted_at":  "2026-11-23 15:40:47",
+                             "status":  "SUBMITTED",
+                             "notes":  "Morning routine stock take",
+                             "total_items":  2,
+                             "total_variance":  -2
+                         }
+                     ],
+    "stock_adjustments":  [
+                              {
+                                  "adjustment_id":  1,
+                                  "count_item_id":  1,
+                                  "product_id":  1,
+                                  "sku":  "FMM-1001",
+                                  "product_name":  "Brookside Fresh Milk 500ml",
+                                  "quantity_delta":  -2,
+                                  "reason":  "Carton seal leak discovered during shelf restocking",
+                                  "status":  "APPROVED",
+                                  "proposed_by":  2,
+                                  "proposed_by_name":  "Amina Mwangi (Attendant)",
+                                  "proposed_at":  "2026-11-23 15:40:47",
+                                  "approved_by":  1,
+                                  "approved_by_name":  "Mitsanze Kazungu (Admin)",
+                                  "decided_at":  "2026-11-23 21:38:18"
+                              }
+                          ],
+    "stock_movements":  [
+                            {
+                                "movement_id":  1,
+                                "product_id":  1,
+                                "sku":  "FMM-1001",
+                                "product_name":  "Brookside Fresh Milk 500ml",
+                                "movement_type":  "OPENING",
+                                "quantity_delta":  6,
+                                "reference":  "INIT-STOCK",
+                                "actor_name":  "Mitsanze Kazungu (Admin)",
+                                "occurred_at":  "2026-11-23 15:40:47"
+                            },
+                            {
+                                "movement_id":  2,
+                                "product_id":  2,
+                                "sku":  "FMM-1002",
+                                "product_name":  "Jogoo Maize Meal 2kg",
+                                "movement_type":  "OPENING",
+                                "quantity_delta":  30,
+                                "reference":  "INIT-STOCK",
+                                "actor_name":  "Mitsanze Kazungu (Admin)",
+                                "occurred_at":  "2026-11-23 15:40:47"
+                            },
+                            {
+                                "movement_id":  3,
+                                "product_id":  2,
+                                "sku":  "FMM-1002",
+                                "product_name":  "Jogoo Maize Meal 2kg",
+                                "movement_type":  "SALE",
+                                "quantity_delta":  -2,
+                                "reference":  "RCP-20261122-1042",
+                                "actor_name":  "Amina Mwangi (Attendant)",
+                                "occurred_at":  "2026-11-23 15:40:47"
+                            },
+                            {
+                                "movement_id":  4,
+                                "product_id":  1,
+                                "sku":  "FMM-1001",
+                                "product_name":  "Brookside Fresh Milk 500ml",
+                                "movement_type":  "ADJUSTMENT",
+                                "quantity_delta":  -2,
+                                "reference":  "ADJ-1: Carton seal leak discovered during shelf restocking",
+                                "actor_name":  "Mitsanze Kazungu (Admin)",
+                                "occurred_at":  "2026-11-23 21:38:18"
+                            }
+                        ],
+    "customer_ledger_entries":  [
+                                    {
+                                        "entry_id":  1,
+                                        "customer_id":  2,
+                                        "sale_id":  null,
+                                        "entry_type":  "CREDIT_SALE",
+                                        "signed_amount":  2500,
+                                        "payment_method":  "CREDIT",
+                                        "reference":  "RCP-PREV-01",
+                                        "created_by":  1,
+                                        "created_by_name":  "Admin",
+                                        "occurred_at":  "2026-11-23 15:40:47"
+                                    },
+                                    {
+                                        "entry_id":  2,
+                                        "customer_id":  2,
+                                        "sale_id":  null,
+                                        "entry_type":  "REPAYMENT",
+                                        "signed_amount":  -650,
+                                        "payment_method":  "MPESA",
+                                        "reference":  "QK781290AA",
+                                        "created_by":  2,
+                                        "created_by_name":  "Amina",
+                                        "occurred_at":  "2026-11-23 15:40:47"
+                                    }
+                                ],
+    "audit_logs":  [
+                       {
+                           "audit_id":  1,
+                           "user_id":  1,
+                           "user_name":  "Mitsanze Kazungu (Admin)",
+                           "action":  "SYSTEM_BOOT",
+                           "entity_type":  "SYSTEM",
+                           "entity_id":  "ALL",
+                           "reason":  "Furaha Mini Mart ISMS live server online",
+                           "occurred_at":  "2026-11-23 15:40:47"
+                       }
+                   ]
+}

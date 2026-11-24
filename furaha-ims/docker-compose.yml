@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: furaha_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_123
+      MYSQL_DATABASE: furaha_ims
+      MYSQL_USER: furaha_ims
+      MYSQL_PASSWORD: furaha_ims
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password_123"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  furaha_app:
+    build: .
+    container_name: furaha_app
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      DB_URL: jdbc:mysql://mysql:3306/furaha_ims?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Africa/Nairobi&characterEncoding=utf8
+      DB_USER: furaha_ims
+      DB_PASSWORD: furaha_ims
+
+volumes:
+  mysql_data:
